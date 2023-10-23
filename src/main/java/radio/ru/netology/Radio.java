@@ -1,7 +1,7 @@
 package radio.ru.netology;
 public class Radio {
-    public int currentVolume;
-    public int currentStation;
+    private int currentVolume;
+    private int currentStation;
     public int getCurrentVolume() {
         return currentVolume;
     }
@@ -15,15 +15,17 @@ public class Radio {
         currentVolume = newCurrentVolume;
     }
     public void increaseVolume() {
-        if (currentVolume < 100) {
-            currentVolume = currentVolume + 1;
-        } else {currentVolume = 100;}
+        if (currentVolume != 100) {
+           currentVolume ++;
+        } else {
+            currentVolume = 100;
+        }
     }
+
     public void decreaseVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        }
-        if (currentVolume <=0 ){
+        } else {
             currentVolume = 0;
         }
     }
@@ -43,24 +45,19 @@ public class Radio {
     }
 
     public void increaseStation(){
-        if (currentStation < 9){
-            currentStation = currentStation + 1;
-        }
-        if (currentStation == 9) {
-            currentStation = 0;
+        if (currentStation != 9){
+            currentStation ++;
+        } else { currentStation = 0;
         }
     }
 
     public void decreaseStation(){
         if (currentStation > 0){
             currentStation = currentStation - 1;
-        }
-        if (currentStation == 0) {
+        } else {
             currentStation = 9;
         }
     }
-
-
 }
 
 
