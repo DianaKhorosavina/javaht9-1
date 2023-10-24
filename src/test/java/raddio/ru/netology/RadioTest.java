@@ -149,6 +149,39 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldHaveDefaultTenStation() {
+        Radio cond = new Radio(10);
+        cond.setCurrentStation(9);
+
+        int expected = 9;
+        int actual = cond.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldHaveOpportunityToChooseNumberOfStationsMoreThanTen() {
+        Radio cond = new Radio(50);
+        cond.setCurrentStation(49);
+
+        int expected = 49;
+        int actual = cond.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldHaveOpportunityToChooseNumberOfStationsLessThanTen() {
+        Radio cond = new Radio(7);
+        cond.setCurrentStation(6);
+
+        int expected = 6;
+        int actual = cond.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldSetMaxStation() {
         Radio cond = new Radio();
 
